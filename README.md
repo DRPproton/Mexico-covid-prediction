@@ -150,7 +150,7 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
 
 5. **Test your application run Python Test Scripts**:
    Open a new shell with the enviroment activated and run the script bellow.
-   ``bash
+   ```bash
    python test_api.py
    ```
 
@@ -161,8 +161,9 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
    Uncomment lines 15 and 16 and comment line 19
 3. **Test your application run Python Test Scripts**:
    Save file and run it on the shell using the command bellow.
-   ``bash
+   ```bash
    python test_api.py
+   ```
 
 
 
