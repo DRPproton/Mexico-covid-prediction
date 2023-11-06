@@ -113,7 +113,7 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
    
 2. **Test APIs**:
    Open a new shell with the enviroment activated and run the script bellow.
-  ``bash
+  ```bash
    python test_api.py
    ```
 
@@ -136,7 +136,6 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
    ```bash
    docker images
    ```
-
    You should see your newly created image in the list.
 
 4. **Run a container from the Docker image (optional)**:
@@ -145,7 +144,6 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
    ```bash
    docker run -d --name your-container-name your-image-name
    ```
-
    The `-d` flag runs the container in detached mode. You can access the running container using its name.
 
 5. **Test your application run Python Test Scripts**:
