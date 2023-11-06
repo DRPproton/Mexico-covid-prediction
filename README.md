@@ -119,7 +119,7 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
 
 ## Creating a Docker image using a Dockerfile involves several steps. Below are the commands and steps to build a Docker image from a Dockerfile:
 
-1. **Navigate to the midterm_deployment folder inside the main project**:
+1. **Navigate to the ***midterm_deployment*** folder inside the main project**:
 
 2. **Build the Docker image**:
    Use the `docker build` command to build an image based on the Dockerfile. Replace `your-image-name` with the name you want to give to your Docker image:
