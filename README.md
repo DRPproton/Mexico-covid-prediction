@@ -118,16 +118,17 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
    ```
 
    ```
-   patient = {'sexo': 1.0,
- 'neumonia': 1.0,
- 'edad': 75,
- 'diabetes': 1.0,
- 'epoc': 1.0,
- 'inmusupr': 0.0,
- 'hipertension': 1.0,
- 'cardiovascular': 1.0,
- 'obesidad': 1.0,
- 'renal_cronica': 0.0}```
+     patient = {'sexo': 1.0,
+    'neumonia': 1.0,
+    'edad': 75,
+    'diabetes': 1.0,
+    'epoc': 1.0,
+    'inmusupr': 0.0,
+    'hipertension': 1.0,
+    'cardiovascular': 1.0,
+    'obesidad': 1.0,
+    'renal_cronica': 0.0}
+   ```
 
 ## Creating a Docker image using a Dockerfile involves several steps. Below are the commands and steps to build a Docker image from a Dockerfile:
 
@@ -154,7 +155,7 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
    If you want to test your image, you can run a container based on it using the `docker run` command. Replace `your-container-name` with a name for your container:
 
    ```bash
-   docker run -d --name your-container-name your-image-name
+   docker run -it --rm -p 9696:9696 [containerName]
    ```
    The `-d` flag runs the container in detached mode. You can access the running container using its name.
 
@@ -163,6 +164,7 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
    ```bash
    python test_api.py
    ```
+> ***Due to that we are using a free version for deployment sometimes take more than 30 seconds to get the result***
 
 ## Testing the live API
 1. **Open files**:
@@ -174,7 +176,48 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
    ```bash
    python test_api.py
    ```
+> Deployed API in this address https://mexico-covid-prediction.onrender.com/predict 
+   
+## Deploy a Docker container in Render, follow these steps:
 
+1. **Sign Up for Render:**
+   If you haven't already, sign up for an account on the Render platform.
+
+2. **Create a New Web Service:**
+   Once you're logged in, click on the "New" button in the Render dashboard and select "Web Service" to create a new service.
+
+3. **Connect a Git Repository (We used this one method):**
+   You can connect a Git repository to Render, which will allow you to automatically deploy your Docker container whenever you push changes to your repository. This step is optional but can simplify the deployment process.
+
+4. **Choose Your Repository:**
+   If you've connected a Git repository, select it. If not, you can choose to deploy your container without a repository by selecting the "Docker" option.
+
+5. **Configure Your Service:**
+   Fill in the configuration details for your service, such as the name, environment (development or production), and the region where you want to deploy your Docker container.
+
+6. **Define a Dockerfile:**
+   Create a Dockerfile for your project if you haven't already. The Dockerfile should define the necessary instructions to build your Docker image. You can use any base image and specify the dependencies and commands required to run your application.
+
+7. **Specify Build Settings:**
+   If you're using a Git repository, Render will detect your Dockerfile automatically. If not, you'll need to specify the path to your Dockerfile in the "Build and Start Command" section. You can also define environment variables, if needed.
+
+8. **Build and Deploy:**
+   Click on the "Create Web Service" button. Render will build your Docker image and deploy your service based on the settings you provided.
+
+9. **Monitor Deployment:**
+   You can monitor the deployment progress in the Render dashboard. Render will provide you with a URL for your service, which you can access once the deployment is complete.
+
+10. Configure Custom Domains (Optional):
+    If you want to use a custom domain with your service, you can configure it in the Render dashboard.
+
+11. **Scale Your Service (Optional):**
+    If you need to scale your service, you can configure auto-scaling settings in the Render dashboard to handle increased traffic.
+
+12. **Monitor and Maintain:**
+    Use the Render dashboard to monitor your service's performance and make any necessary updates or changes.
+
+
+<img width="1409" alt="Screenshot 2023-11-07 at 9 09 45 AM" src="https://github.com/DRPproton/Mexico-covid-prediction/assets/86702004/2eb74ecb-10f3-4d79-97ad-edafeabd10e5">
 
 
    
