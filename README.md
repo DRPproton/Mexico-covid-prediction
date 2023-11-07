@@ -1,5 +1,6 @@
 # COVID-19 Prediction in Mexico
 
+We will try to predict the probability of patient to die base in the comorbidities they have. 
 This repository contains a Jupyter Notebook, `covid_prediction.ipynb`, which provides a predictive analysis of COVID-19 cases in Mexico. 
 The notebook aims to help you understand and predict COVID-19 trends in Mexico using data analysis and machine learning techniques.
 
@@ -33,14 +34,15 @@ These variables are crucial for understanding the impact of comorbidities on COV
 
 The ongoing COVID-19 pandemic has had a significant impact on countries worldwide. 
 This project focuses on Mexico and aims to predict the progression of COVID-19 cases in the country using data analysis and machine learning. 
-The Jupyter Notebook, `covid_prediction.ipynb`, walks you through the process of collecting, preprocessing, and analyzing COVID-19 data in Mexico. 
+The Jupyter Notebook, `covid_prediction.ipynb`, walks you through the process of loading, and analyzing COVID-19 data in Mexico. 
 It also includes predictive modeling to forecast future trends.
 
 ## Data
 
 The analysis in this notebook relies on COVID-19 data for Mexico. 
-The data used is publicly available and can be obtained from a public datasets .
-Please ensure that you have the most up-to-date data to perform accurate predictions.
+The data used is publicly available and can be obtained from a public datasets.
+You can access the complete dataset in this Kaggle page https://www.kaggle.com/datasets/dashelruizperez/covid-19-mexico. 
+We used only a subset of the original dataset for our modeling, becuase those the variables we were interested.
 
 ## Installation
 
@@ -59,33 +61,23 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
    pip install pipenv
    ```
 
-2. **Create a New Project Directory**:
-   Create a new directory for your Python project and navigate to it using the terminal.
+2. **Navigate to Project Directory**:
+   Navigate to project directory it using the terminal.
 
    ```bash
-   mkdir my_python_project
-   cd my_python_project
+   cd project_directory
    ```
 
-3. **Initialize a New Pipenv Environment**:
-   Inside your project directory, run the following command to create a new Pipenv environment and generate a `Pipfile` to manage your project's dependencies:
-
-   ```bash
-   pipenv --python 3.10
-   ```
-
-   Replace `3.10` with your desired Python version. This command will also activate the virtual environment.
-
-4. **Install Dependencies**:
-   You can install Python packages and dependencies for your project using `pipenv install`.
-
+3. **Initialize a New Pipenv Environment and Install Dependencies**:
+   Inside your project directory, run the following command to create a new Pipenv environment and install Python packages and dependencies for your project using `pipenv install`.
+   
    ```bash
    pipenv install
    ```
 
    This will add the package to your `Pipfile` and install it within the virtual environment.
 
-5. **Activate the Pipenv Shell** (Optional):
+4. **Activate the Pipenv Shell** (Optional):
    If not already activated, you can activate the Pipenv shell to work within the virtual environment:
 
    ```bash
@@ -94,11 +86,18 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
 
    Your terminal prompt will change to indicate that you are now working within the Pipenv virtual environment.
 
-6. **Run Python Scripts**:
+5. **Run Python Scripts**:
    You can now run your Python scripts within the Pipenv virtual environment. For example, if you have a script named `my_script.py`, you can run it with:
     
    ```bash
    python predict.py
+   ```
+   
+6. **Run Jupyter Notebook**:
+   You can now run the Notebook within the Pipenv virtual environment. For example, you can run it with:
+    
+   ```bash
+   jupyter lab
    ```
 
    Any packages installed using `pipenv install` will be available for your scripts within the virtual environment.
@@ -112,10 +111,23 @@ To run the Jupyter Notebook and perform the analysis, you'll need Python and som
    ```
    
 2. **Test APIs**:
-   Open a new shell with the enviroment activated and run the script bellow.
+   Open a new shell with the enviroment activated and run the script bellow to test the api.
+   The test_api.py file have a sample of a patiente, feel free to change the parameters to see how the changes affect the result. 
   ```bash
    python test_api.py
    ```
+
+   ```
+   patient = {'sexo': 1.0,
+ 'neumonia': 1.0,
+ 'edad': 75,
+ 'diabetes': 1.0,
+ 'epoc': 1.0,
+ 'inmusupr': 0.0,
+ 'hipertension': 1.0,
+ 'cardiovascular': 1.0,
+ 'obesidad': 1.0,
+ 'renal_cronica': 0.0}```
 
 ## Creating a Docker image using a Dockerfile involves several steps. Below are the commands and steps to build a Docker image from a Dockerfile:
 
